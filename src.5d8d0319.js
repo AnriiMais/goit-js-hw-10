@@ -14,4 +14,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"Focm":[function(require,module,exports) {
 "use strict";var e=require("./js/fetchCountries"),t=require("notiflix/build/notiflix-notify-aio"),r=n(require("lodash.debounce"));function n(e){return e&&e.__esModule?e:{default:e}}require("./css/styles.css");const u=500,o={inputCountryName:document.querySelector("#search-box"),countryList:document.querySelector(".country-list"),countryInfo:document.querySelector(".country-info")};function i(r){""===r.target.value?document.querySelector(".country-list").innerHTML="":(0,e.fetchCountries)(r.target.value).then(t=>{if(t.length>10)return alert("Дахуя хочеш!!!"),!1;(0,e.countryListMark)(t),console.log(t)}).catch(e=>t.Notify.failure("Oops, there is no country with that name"))}o.inputCountryName.addEventListener("input",(0,r.default)(i,500));
 },{"./js/fetchCountries":"irxn","notiflix/build/notiflix-notify-aio":"MeeU","lodash.debounce":"PZFh","./css/styles.css":"krre"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10/src.55222149.js.map
+//# sourceMappingURL=/goit-js-hw-10/src.5d8d0319.js.map
