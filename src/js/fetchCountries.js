@@ -27,7 +27,7 @@ export const oneCountryMark = data => {
   const markupInfo = data
     .map(item => {
       const language = Object.values(item.languages[0]);
-      console.log('language', language);
+
       return `
     <div class="country-card">
           <img src=${item.flag} alt=${item.name}/>
