@@ -16,12 +16,15 @@ body {
   font: inherit;
   padding: 8px;
   max-width: 320px;
-  margin-bottom: 16px;
+  display: block;
+  margin: 16px auto;
 }
 
 .country-list {
   background-color: #aaf5e2;
   max-width: 30%;
+  display: block;
+  margin: 0 auto;
 }
 .country-list li {
   list-style: none;
