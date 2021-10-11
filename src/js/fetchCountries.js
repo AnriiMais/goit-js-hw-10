@@ -1,15 +1,10 @@
 import { baseURL } from './config';
 
-// ?fields={field},{field},{field}
 export const fetchCountries = name =>
   new Promise((res, rej) => {
-    fetch(baseURL + `${name}` + `?fields=name,capital,population,flag,languages`)
+    fetch(baseURL + `${name}?fields=name,capital,population,flag,languages`)
       .then(response => {
-        if (response.status >= 200 && response.status < 300);
-        {
-          console.log(response.status);
-          return response.json();
-        }
+        if (response.status >= 200 && response.status < 300) return response.json();
         rej();
       })
       .then(data => res(data));
@@ -18,16 +13,31 @@ export const countryListMark = data => {
   const ulNode = document.querySelector('.country-list');
   const markup = data
     .map(item => {
-      return `
-  <li>
-  <img src="${item.flag}" alt="${item.name}"/>${item.name}
-  </li>
-  `;
+      // item.altSpellings = '';
+      return `<li>
+              <img src=${item.flag} alt=${item.name}/>${item.name}
+              </li>`;
     })
     .join('');
   ulNode.innerHTML = markup;
 };
 export const oneCountryMark = data => {
   const divNode = document.querySelector('.country-info');
-  // const cardInfo = { ...data };
+
+  const markupInfo = data
+    .map(item => {
+      const language = Object.values(item.languages[0]);
+      console.log('language', language);
+      return `
+    <div class="country-card">
+          <img src=${item.flag} alt=${item.name}/>
+          <h2>${item.name}</h2>
+        <p><b>Capital</b>: ${item.capital}</p>
+        <p><b>Population</b>: ${item.population}</p>
+        <p><b>Languages</b>: "${language[3]}"</p>
+    </div>
+    `;
+    })
+    .join('');
+  divNode.innerHTML = markupInfo;
 };

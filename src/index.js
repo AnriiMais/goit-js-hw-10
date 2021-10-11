@@ -1,4 +1,4 @@
-import { fetchCountries, countryListMark } from './js/fetchCountries';
+import { fetchCountries, countryListMark, oneCountryMark } from './js/fetchCountries';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import debounce from 'lodash.debounce';
 import './css/styles.css';
@@ -10,19 +10,25 @@ const refs = {
   countryInfo: document.querySelector('.country-info'),
 };
 refs.inputCountryName.addEventListener('input', debounce(onFormInput, DEBOUNCE_DELAY));
+
 function onFormInput(e) {
-  if (e.target.value === '') {
-    document.querySelector('.country-list').innerHTML = '';
-  } else
-    fetchCountries(e.target.value)
+  const name = e.target.value.trim();
+  document.querySelector('.country-list').innerHTML = '';
+  document.querySelector('.country-info').innerHTML = '';
+  if (name !== '') {
+    fetchCountries(name)
       .then(data => {
-        if (data.length > 10) {
-          // Notify.info('Too many matches found. Please enter a more specific name.');
-          alert('Дахуя хочеш!!!');
+        if (data.length === 1) oneCountryMark(data);
+        else if (data.length > 10) {
+          Notify.info('Too many matches found. Please enter a more specific name.');
+
           return false;
         } else countryListMark(data);
         console.log(data);
       })
-      .catch(error => Notify.failure('Oops, there is no country with that name'));
-  // console.log(e.target.value);
+      .catch(error => {
+        console.log(error);
+        Notify.failure('Oops, there is no country with that name');
+      });
+  }
 }

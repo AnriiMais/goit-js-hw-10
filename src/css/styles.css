@@ -18,34 +18,10 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
-/* example */
-/* body {
-  margin: 16px;
-  line-height: 1.5;
-  color: #212121;
-  font-family: sans-serif;
-}
 
-p {
-  margin: 0;
-}
-
-.user-list {
-  margin: 0;
-  list-style: none;
-  padding: 24px;
-}
-
-.user-list li:not(:last-child) {
-  margin-bottom: 16px;
-} */
-
-/* /example */
 .country-list {
   background-color: #aaf5e2;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
+  max-width: 30%;
 }
 .country-list li {
   list-style: none;
@@ -59,4 +35,16 @@ img {
   display: block;
   margin-right: 20px;
   padding: 20px 5px;
+}
+.country-card {
+  width: 250px;
+  background-color: #a2d0e2;
+  /* text-align: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+}
+.country-card p {
+  margin: 5px 0;
 }
