@@ -40,14 +40,19 @@ img {
   padding: 20px 5px;
 }
 .country-card {
+  margin: 0 auto;
   width: 250px;
   background-color: #a2d0e2;
-  /* text-align: center; */
-  display: flex;
+  text-align: center;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
   /* align-items: center; */
 }
 .country-card p {
   margin: 5px 0;
+}
+.country-card-img {
+  display: block;
+  margin: 0 auto;
 }

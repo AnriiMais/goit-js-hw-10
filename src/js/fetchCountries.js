@@ -29,7 +29,7 @@ export const oneCountryMark = data => {
 
       return `
     <div class="country-card">
-          <img src=${item.flag} alt=${item.name}/>
+          <img src=${item.flag} alt=${item.name} class="country-card-img"/>
           <h2>${item.name}</h2>
         <p><b>Capital</b>: ${item.capital}</p>
         <p><b>Population</b>: ${item.population}</p>
