@@ -13,7 +13,6 @@ export const countryListMark = data => {
   const ulNode = document.querySelector('.country-list');
   const markup = data
     .map(item => {
-      // item.altSpellings = '';
       return `<li>
               <img src=${item.flag} alt=${item.name}/>${item.name}
               </li>`;

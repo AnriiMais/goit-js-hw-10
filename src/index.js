@@ -24,7 +24,6 @@ function onFormInput(e) {
 
           return false;
         } else countryListMark(data);
-        console.log(data);
       })
       .catch(error => {
         console.log(error);
