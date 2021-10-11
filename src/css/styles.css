@@ -44,10 +44,6 @@ img {
   width: 250px;
   background-color: #a2d0e2;
   text-align: center;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-  /* align-items: center; */
 }
 .country-card p {
   margin: 5px 0;
